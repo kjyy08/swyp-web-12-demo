@@ -15,7 +15,7 @@ Team Lead (Claude Code Main)
 │   └── oh-my-claudecode:build-fixer  # 빌드 에러 수정
 │
 ├── ui-designer (oh-my-claudecode:designer)
-│   ├── Pencil MCP                    # .pen 파일 디자인 제작
+│   ├── docs/design/                  # UI/UX 설계 문서 작성
 │   └── oh-my-claudecode:explore      # 코드베이스 탐색
 │
 └── devops-eng (general-purpose)
@@ -53,7 +53,7 @@ Team Lead (Claude Code Main)
 |------|-----|
 | Agent Type | `oh-my-claudecode:designer` |
 | 담당 디렉토리 | `docs/design/` |
-| 주요 작업 | Pencil(.pen)로 UI 디자인 제작, 레이아웃 설계 |
+| 주요 작업 | UI/UX 설계, 디자인 가이드 문서 작성 |
 | 상세 계획 | [designer-plan.md](./designer-plan.md) |
 
 ---

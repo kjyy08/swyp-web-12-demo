@@ -77,7 +77,7 @@ cd gitops && docker compose up --build
 - `client/` - React SPA. Tailwind CSS v4는 Vite 플러그인 방식(`@tailwindcss/vite`)으로 설정됨. `@import "tailwindcss"`만 사용.
 - `gitops/` - Docker, Docker Compose. nginx에서 `/api/` 요청을 백엔드로 프록시.
 - `docs/plans/` - 에이전트 팀 구현 계획 문서. API 스펙과 데이터 모델은 `backend-plan.md`가 원본.
-- `docs/design/` - Pencil MCP(.pen) UI 디자인 산출물.
+- `docs/design/` - UI/UX 디자인 설계 문서.
 
 ## Rules
 - 테스트 코드는 작성하지 않는다

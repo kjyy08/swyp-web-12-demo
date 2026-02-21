@@ -33,7 +33,7 @@
 
 ### 5. `src/components/GuestbookCard.tsx`
 - 닉네임, 직군 뱃지, 메시지, 등록 시간, 삭제 버튼
-- 디자인은 `docs/design/guestbook.pen`의 디자이너 산출물 참조
+- 디자인은 `docs/design/`의 디자이너 설계 문서 참조
 
 ### 6. `src/components/GuestbookList.tsx`
 - GuestbookCard 그리드 렌더링

@@ -12,7 +12,7 @@
 |---------|------|------|
 | **backend-dev** | 백엔드 개발자 | FastAPI REST API, DB 모델, CRUD |
 | **frontend-dev** | 프론트엔드 개발자 | React UI 컴포넌트, API 연동, 스타일링 |
-| **ui-designer** | UI/UX 디자이너 | Pencil(.pen)로 UI 디자인 제작 |
+| **ui-designer** | UI/UX 디자이너 | UI/UX 설계, 디자인 가이드 작성 |
 | **devops-eng** | DevOps 엔지니어 | Dockerfile, Docker Compose |
 
 ## 기술 스택
@@ -22,7 +22,6 @@
 | Backend | FastAPI + SQLAlchemy + aiosqlite (SQLite) |
 | Frontend | React + Vite + TypeScript + Tailwind CSS v4 |
 | Infra | Docker, Docker Compose |
-| Design | Pencil MCP (.pen 파일) |
 | AI Tool | [Claude Code](https://docs.anthropic.com/en/docs/claude-code) + [Oh-My-ClaudeCode](https://github.com/nicekid1/oh-my-claudecode) |
 
 ## 프로젝트 구조
@@ -34,7 +33,7 @@ swyp-web-12-demo/
 ├── gitops/          # Dockerfile, Docker Compose
 ├── docs/
 │   ├── plans/       # 에이전트 팀 구현 계획 문서
-│   └── design/      # UI/UX 디자인 산출물 (.pen)
+│   └── design/      # UI/UX 디자인 설계 문서
 ├── CLAUDE.md        # 프로젝트 설정 (에이전트 공유)
 └── README.md
 ```
@@ -86,7 +85,15 @@ npm run dev
 
 1. [Claude Code](https://docs.anthropic.com/en/docs/claude-code) 설치
 2. [Oh-My-ClaudeCode](https://github.com/nicekid1/oh-my-claudecode) 플러그인 설치
-3. [Pencil](https://www.pencil.dev/) 설치 (디자이너 에이전트용)
+3. 에이전트 팀 기능 활성화 (실험적 기능)
+   `~/.claude/settings.json`에 아래 내용 추가:
+   ```json
+   {
+     "env": {
+       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+     }
+   }
+   ```
 
 ### 실행
 
