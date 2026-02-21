@@ -1,0 +1,20 @@
+server:
+  image:
+    repository: ghcr.io/kjyy08/swyp-web-12-demo-server
+    tag: latest
+    pullPolicy: Always
+  port: 8000
+  replicas: 1
+
+client:
+  image:
+    repository: ghcr.io/kjyy08/swyp-web-12-demo-client
+    tag: latest
+    pullPolicy: Always
+  port: 80
+  replicas: 1
+
+ingress:
+  host: swyp12.luigi99.cloud
+  tlsSecretName: swyp12-tls
+  clusterIssuer: letsencrypt-prod
