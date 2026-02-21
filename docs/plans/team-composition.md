@@ -64,7 +64,7 @@ Team Lead (Claude Code Main)
 |------|-----|
 | Agent Type | `general-purpose` |
 | 담당 디렉토리 | `gitops/` |
-| 주요 작업 | Dockerfile, Docker Compose, Helm Chart |
+| 주요 작업 | Dockerfile, Docker Compose |
 | 상세 계획 | [devops-plan.md](./devops-plan.md) |
 
 ---

@@ -13,7 +13,7 @@
 | **backend-dev** | 백엔드 개발자 | FastAPI REST API, DB 모델, CRUD |
 | **frontend-dev** | 프론트엔드 개발자 | React UI 컴포넌트, API 연동, 스타일링 |
 | **ui-designer** | UI/UX 디자이너 | Pencil(.pen)로 UI 디자인 제작 |
-| **devops-eng** | DevOps 엔지니어 | Dockerfile, Docker Compose, Helm Chart |
+| **devops-eng** | DevOps 엔지니어 | Dockerfile, Docker Compose |
 
 ## 기술 스택
 
@@ -21,7 +21,7 @@
 |------|------|
 | Backend | FastAPI + SQLAlchemy + aiosqlite (SQLite) |
 | Frontend | React + Vite + TypeScript + Tailwind CSS v4 |
-| Infra | Docker, Docker Compose, ArgoCD Helm Chart |
+| Infra | Docker, Docker Compose |
 | Design | Pencil MCP (.pen 파일) |
 | AI Tool | [Claude Code](https://docs.anthropic.com/en/docs/claude-code) + [Oh-My-ClaudeCode](https://github.com/nicekid1/oh-my-claudecode) |
 
@@ -31,7 +31,7 @@
 swyp-web-12-demo/
 ├── server/          # FastAPI 백엔드 (Python, uv)
 ├── client/          # React + Vite + Tailwind CSS 프론트엔드 (TypeScript)
-├── gitops/          # Dockerfile, Docker Compose, ArgoCD Helm Chart
+├── gitops/          # Dockerfile, Docker Compose
 ├── docs/
 │   ├── plans/       # 에이전트 팀 구현 계획 문서
 │   └── design/      # UI/UX 디자인 산출물 (.pen)
@@ -97,7 +97,7 @@ Claude Code에서 아래 프롬프트를 입력하면 4명의 에이전트가 �
 backend-dev는 server/에 FastAPI API를,
 frontend-dev는 client/에 React UI를,
 ui-designer는 docs/design/의 UI/UX 디자인을,
-devops-eng는 gitops/에 Docker와 Helm chart를 작성해.
+devops-eng는 gitops/에 Dockerfile과 Docker Compose를 작성해.
 각 팀원은 서브에이전트를 적극 활용해서 작업해.
 docs/plans/ 폴더의 계획 문서를 참고해.
 ```

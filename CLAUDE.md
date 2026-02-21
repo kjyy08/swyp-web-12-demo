@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Tech Stack
 - **Backend**: FastAPI + SQLAlchemy + aiosqlite (SQLite)
 - **Frontend**: React + Vite + TypeScript + Tailwind CSS v4
-- **Infra**: Docker, Docker Compose, ArgoCD Helm Chart
+- **Infra**: Docker, Docker Compose
 - **Package Manager**: uv (backend), npm (frontend)
 
 ## Commit Convention
@@ -75,7 +75,7 @@ cd gitops && docker compose up --build
 
 - `server/` - FastAPI 백엔드. async SQLAlchemy + aiosqlite로 SQLite 비동기 접근. API prefix는 `/api/`.
 - `client/` - React SPA. Tailwind CSS v4는 Vite 플러그인 방식(`@tailwindcss/vite`)으로 설정됨. `@import "tailwindcss"`만 사용.
-- `gitops/` - Docker, Docker Compose, ArgoCD Helm Chart. nginx에서 `/api/` 요청을 백엔드로 프록시.
+- `gitops/` - Docker, Docker Compose. nginx에서 `/api/` 요청을 백엔드로 프록시.
 - `docs/plans/` - 에이전트 팀 구현 계획 문서. API 스펙과 데이터 모델은 `backend-plan.md`가 원본.
 - `docs/design/` - Pencil MCP(.pen) UI 디자인 산출물.
 

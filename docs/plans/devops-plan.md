@@ -29,16 +29,11 @@
 - docker-compose.yml은 gitops/에 위치하므로 상대 경로 주의
 - server 컨테이너 이름을 `server`로 설정해 nginx 프록시 연동
 
-### 5. Helm Chart (`gitops/helm/guestbook/`)
-- Chart.yaml, values.yaml 작성
-- templates/: server-deployment, server-service, client-deployment, client-service, ingress
-
 ---
 
 ## 디렉토리 생성 필요
 ```bash
 mkdir -p gitops/docker
-mkdir -p gitops/helm/guestbook/templates
 ```
 
 ## 검증
