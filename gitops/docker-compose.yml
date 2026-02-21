@@ -1,0 +1,22 @@
+services:
+  server:
+    build:
+      context: ../
+      dockerfile: gitops/docker/Dockerfile.server
+    container_name: server
+    ports:
+      - "8000:8000"
+    volumes:
+      - server-data:/app/data
+
+  client:
+    build:
+      context: ../
+      dockerfile: gitops/docker/Dockerfile.client
+    ports:
+      - "3000:80"
+    depends_on:
+      - server
+
+volumes:
+  server-data:

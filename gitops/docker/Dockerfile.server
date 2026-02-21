@@ -1,0 +1,23 @@
+FROM python:3.12-slim
+
+# uv 설치
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
+
+WORKDIR /app
+
+# 의존성 파일 복사 후 설치
+COPY server/pyproject.toml server/uv.lock ./
+RUN uv sync --frozen --no-dev
+
+# 소스코드 복사
+COPY server/ .
+
+# DB 데이터 디렉토리 생성 + non-root 사용자 설정
+RUN adduser --disabled-password --no-create-home appuser \
+    && mkdir -p /app/data \
+    && chown appuser:appuser /app/data
+USER appuser
+
+EXPOSE 8000
+
+CMD [".venv/bin/python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
