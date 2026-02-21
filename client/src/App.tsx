@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import type { Guestbook, GuestbookCreate } from "./types/guestbook";
+import { fetchGuestbooks, createGuestbook, deleteGuestbook } from "./api/guestbook";
+import Header from "./components/Header";
+import GuestbookForm from "./components/GuestbookForm";
+import GuestbookList from "./components/GuestbookList";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [entries, setEntries] = useState<Guestbook[]>([]);
+
+  // 목록 조회
+  const loadEntries = async () => {
+    try {
+      const data = await fetchGuestbooks();
+      setEntries(data);
+    } catch {
+      console.error("방명록 조회 실패");
+    }
+  };
+
+  useEffect(() => {
+    loadEntries();
+  }, []);
+
+  // 등록
+  const handleCreate = async (data: GuestbookCreate) => {
+    try {
+      await createGuestbook(data);
+      await loadEntries();
+    } catch {
+      alert("등록에 실패했습니다");
+      throw new Error("등록 실패");
+    }
+  };
+
+  // 삭제
+  const handleDelete = async (id: number) => {
+    if (!window.confirm("정말 삭제하시겠습니까?")) return;
+    try {
+      await deleteGuestbook(id);
+      await loadEntries();
+    } catch {
+      alert("삭제에 실패했습니다");
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-3xl mx-auto px-4 pb-16">
+        <Header />
+        <GuestbookForm onSubmit={handleCreate} />
+        <GuestbookList entries={entries} onDelete={handleDelete} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
-
-export default App
