@@ -100,7 +100,7 @@ npm run dev
 Claude Code에서 아래 프롬프트를 입력하면 4명의 에이전트가 동시에 작업을 시작합니다.
 
 ```
-/team CLAUDE.md를 읽고 스위프 웹 12기 데모데이 방명록 풀스택 앱을 만들어줘.
+/team 스위프 웹 12기 데모데이 방명록 풀스택 앱을 만들어줘.
 backend-dev는 server/에 FastAPI API를,
 frontend-dev는 client/에 React UI를,
 ui-designer는 docs/design/의 UI/UX 디자인을,
